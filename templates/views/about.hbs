@@ -10,7 +10,24 @@
 <body>
     <div class="main-content">
         {{>header}}
-        <p>This site was created by Yoon Choi.</p>
+        <div class="about-content">
+            The original data is from this <a href="https://reddit.com/r/cityporn" target="_blank">reddit subreddit</a>.
+            The data extraction was made easier with <a href="https://pushshift.io" target="_blank"> pushshift.io</a>.
+            I ran the extracted post title on <a href="https://cloud.google.com/natural-language" target="_blank">Google Cloud Natural Language API</a> to extract location entity. 
+            With the locations, I used <a href="https://www.openstreetmap.org" target="_blank">openstreetmap</a> to get latitude and longitude.
+            Finally, I plotted the locations against the world map with <a href="https://www.leafletjs.com" target="_blank">leaflet</a>.
+        </div>
+
+        <div class="about-content">
+            <ul>
+                <li>There were some posts that were uploaded multiple times but since they had different unique ids, I kept them as such.</li>
+                <li>There were generalizations in the locations.</li>
+                <li>When there were multiple locations from the title, 
+                    I kept the one with greatest <a href="https://cloud.google.com/natural-language/docs/basics#entity_analysis" target="_blank">salience</a>.</li>
+            </ul>
+
+        </div>
+        
     </div>
     
     {{>footer}}

@@ -16,6 +16,12 @@ body {
     flex-grow: 1;
 }
 
+.about-content {
+    flex-grow: 1;
+    line-height: 200%;
+
+}
+
 
 footer {
     color: #888888;

@@ -29,26 +29,8 @@ app.get('', (req, res) => {
 //about
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About Me',
+        title: 'About The Website',
         name: 'Yoon Choi'
-    })
-})
-
-//help
-app.get('/help', (req, res) => {
-    res.render('help', {
-        helpText: 'This is some helpful text.',
-        title: 'Help',
-        name: 'Yoon Choi'
-    })
-})
-
-//help 404
-app.get('/help/*', (req, res) => {
-    res.render('404', {
-        title: '404',
-        name: 'Yoon Choi',
-        errorMessage: 'Help article not found.'
     })
 })
 
