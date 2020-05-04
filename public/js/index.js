@@ -1,4 +1,4 @@
-var map = L.map('mapid').setView([0, 0], 0);
+var map = L.map('mapid').setView([42, -9], 2);
 
 // Empty Layer Group that will receive the clusters data on the fly.
 var markers = L.geoJSON(null, {
@@ -17,7 +17,7 @@ function update() {
   var clusters = index.getClusters(bbox, zoom);
   markers.clearLayers();
   markers.addData(clusters);
-  
+
 }
 
 // Zoom to expand the point/cluster clicked by user.

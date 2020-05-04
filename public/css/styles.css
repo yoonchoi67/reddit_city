@@ -1,7 +1,7 @@
 body {
     color: #333333;
     font-family: arial;
-    max-width: 650px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 16px;
 
@@ -15,6 +15,7 @@ body {
 .main-content {
     flex-grow: 1;
 }
+
 
 footer {
     color: #888888;
