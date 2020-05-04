@@ -1,5 +1,2 @@
 node_modules
-cluster.css
-geojson.js
-index.html
-index.js
+public/js
