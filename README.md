@@ -1,7 +1,9 @@
-# Reddit_City
+# Reddit_City 🌍🌇🌎🌆🌏
 
-### Home Page
+### Available in: https://reddit-city.herokuapp.com/
+
+### 🌇Home Page🌇
 ![alt text](/public/img/HomePage2.jpg)
 
-### About Page
+### 🌇About Page🌇
 ![alt text](/public/img/About.jpg)
