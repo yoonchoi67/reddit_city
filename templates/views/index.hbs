@@ -1,17 +1,19 @@
 <!doctype html>
 <html>
     <head>
-        <title>Reddit r/EarthPorn Locations - 2017</title>
+        <title>Reddit City 2010-2019</title>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
                integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
                crossorigin=""/>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css"/>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css"/>
         <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
               integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
               crossorigin=""></script>
         <script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css"/>
+
         <link rel="stylesheet" href="/css/styles.css">
+
     </head>
     <body>
         <div class="main-content">
@@ -23,32 +25,8 @@
             <div id="mapid"></div>
         </div>
         {{>footer}}
+        {{!-- <script src="/js/ex.js"></script> --}}
         <script src="/js/geojson.js"></script>
-        <script>
-            var mymap = L.map('mapid').setView([42.0, -9.0], 2);
-
-            L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-                maxZoom: 18
-            }).addTo(mymap);
-
-            var markers = L.markerClusterGroup();
-
-            mymap.addLayer(markers);
-
-            arr.forEach(function(rec) {
-                var marker = L.marker(new L.LatLng(rec.properties.lat_y, rec.properties.long_x));
-                marker.bindPopup(
-                    '<b>Reddit Post Title:</b> ' + rec.properties.title + 
-                    '<br/><b>Gecoded into:</b> '+ rec.properties.display + 
-                    '<br/><b>Latitude: </b>'+rec.properties.lat_y+' <b>Longitude: </b>'+rec.properties.long_x +
-                    '<br/><b>Click <a href=\"https://reddit.com' + rec.properties.permalink+'\" target=\"_blank\">here</a> for the original post.</b>');
-                markers.addLayer(marker);
-
-
-            })
-
-            
-        </script>
+        <script src="/js/map.js"></script>
     </body>
 </html>
