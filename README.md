@@ -3,7 +3,7 @@
 ### Available in: https://reddit-city.herokuapp.com/
 
 ### 🌇Home Page🌇
-![alt text](/public/img/HomePage2.jpg)
+![alt text](/public/img/Homepage.jpg)
 
 ### 🌇About Page🌇
 ![alt text](/public/img/About.jpg)
