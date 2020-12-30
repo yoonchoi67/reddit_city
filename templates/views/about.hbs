@@ -16,18 +16,18 @@
             I ran the extracted post title on <a href="https://cloud.google.com/natural-language" target="_blank">Google Cloud Natural Language API</a> to extract location entity. 
             With the locations, I used <a href="https://www.openstreetmap.org" target="_blank">openstreetmap</a> to get latitude and longitude.
             Finally, I plotted the locations against the world map with <a href="https://www.leafletjs.com" target="_blank">leaflet</a>.
-            I thank everyone involved in the above websites.</p>
+            The locations all have scores of more than 10.</p>
             
             <p>
                 Click <a href="/js/geojson.js"> here</a> to view the dataset.
         </div>
 
         <div class="about-content">
-            Disclaimers - the data location might not be 100% accurate for the following reasons:
+            The data location might not be totally accurate for the following reasons:
             <ul>
                 <li>There were some posts that were uploaded multiple times but since they had different unique ids, I kept them as such.</li>
                 <li>There were generalizations in the locations.</li>
-                <li>Some that didn't return geolocations were skipped.</li>
+                <li>Some that didn't return geolocations were not included in the dataset.</li>
                 <li>When there were multiple locations from the title, 
                     I kept the one with greatest <a href="https://cloud.google.com/natural-language/docs/basics#entity_analysis" target="_blank">salience</a>.</li>
             </ul>
