@@ -13,17 +13,15 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css"/>
 
         <link rel="stylesheet" href="/css/styles.css">
-
+        <style>
+            html, body {
+                height: 90%;
+            }
+        </style>
     </head>
     <body>
-        <div class="main-content">
-            {{>header}}
-
-            <p>Explore cities around the world virtually</p>
-            <p>Photos from the last decade (2010~2019)</p>
-
-            <div id="mapid"></div>
-        </div>
+        {{>header}}
+        <div id="mapid"></div>
         {{>footer}}
         <script src="/js/geojson.js"></script>
         <script src="/js/map.js"></script>

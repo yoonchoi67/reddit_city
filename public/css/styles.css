@@ -1,7 +1,6 @@
 body {
     color: #333333;
     font-family: arial;
-    max-width: 900px;
     margin: 0 auto;
     padding: 0 16px;
 
@@ -10,7 +9,7 @@ body {
     min-height: 100vh
 }
 
-#mapid { height: 480px; }
+#mapid { height: 90%; }
 
 .main-content {
     flex-grow: 1;
@@ -32,7 +31,7 @@ footer {
 
 header {
     margin-top: 16px;
-    margin-bottom: 48px;
+    margin-bottom: 16px;
 }
 
 h1 {
