@@ -1,5 +1,5 @@
 import React from 'react';
-import './dashboard.css';
+import '../css/dashboard.css';
 import './Leaflet';
 import Leaflet from './Leaflet';
 import FreqCharts from './FreqCharts';

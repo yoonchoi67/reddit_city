@@ -1,5 +1,5 @@
 import React from 'react';
-import './SideBar.css';
+import '../css/SideBar.css';
 import navList from '../static_data/navItem';
 import NavItem from './NavItem';
 
