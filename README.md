@@ -1,6 +1,9 @@
-# Reddit_City 🌇🌍
-### Home Page🌇
-![alt text](/public/img/HomePage.jpg)
+# Reddit City Dashboards 🌇🌍
 
-### About Page🌇
-![alt text](/public/img/About.jpg)
+A dashboard displaying locations of the pictures taken with React, JavaScript, Python, Leaflet, and more.
+
+### Home Dashboard 🌇
+![alt text](/public/dashboard1.png)
+
+### Home Dashboard 🌇
+![alt text](/public/dashboard2.png)
