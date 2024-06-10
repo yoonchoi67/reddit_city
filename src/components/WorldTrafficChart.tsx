@@ -4,7 +4,7 @@ import * as echarts from 'echarts';
 function WorldTrafficChart() {
 
   useEffect(() => {
-    const chart = echarts.init(document.querySelector('#trafficChart'));
+    const chart = echarts.init(document.querySelector('#trafficChart') as HTMLDivElement);
 
     // Sample data
     const data = [

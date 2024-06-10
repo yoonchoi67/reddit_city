@@ -1,4 +1,4 @@
-const navList = [
+const navList: NavItemType[] = [
     {
         _id: 1,
         name: 'Dashboard',
@@ -16,5 +16,11 @@ const navList = [
     }
 
 ];
+
+export interface NavItemType {
+  _id: number;
+  icon: string;
+  name: string;
+}
 
 export default navList;

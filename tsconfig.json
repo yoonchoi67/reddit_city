@@ -93,8 +93,7 @@
     "rootDir": "./src" // Root directory of input files
   },
   "include": [
-    "src/**/*",
-    "src/*",
+    "src",
     "public/**/*",
     // "api/**/*"
   ],

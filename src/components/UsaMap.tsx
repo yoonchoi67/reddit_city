@@ -6,7 +6,7 @@ import { TitleComponent, VisualMapComponent } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
 
 // Register echarts components
-echarts.use([GridComponent, MapChart, TitleComponent, VisualMapComponent, CanvasRenderer]);
+echarts.use([GridComponent, MapChart, TitleComponent, VisualMapComponent, CanvasRenderer] as any[]);
 
 function UsaMap() {
     useEffect(() => {
@@ -153,11 +153,13 @@ function UsaMap() {
                 };
 
                 // Set initial option to mapOption
-                let currentOption = mapOption;
+                // let currentOption = mapOption;
+                let currentOption: Record<string, any> = mapOption; 
                 myChart.setOption(mapOption);
 
                 // Switch between map and bar chart every 2 seconds
                 setInterval(() => {
+                    
                     currentOption = currentOption === mapOption ? barOption : mapOption;
                     myChart.setOption(currentOption, true);
                 }, 5000);

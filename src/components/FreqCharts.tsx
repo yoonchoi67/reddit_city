@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Chart from 'react-apexcharts';
+import { ApexOptions } from 'apexcharts';
+
+interface SubmissionFrequency {
+    [key: string]: {
+        [month: string]: number;
+    };
+}
+
+interface SeriesData {
+    name: string;
+    data: number[];
+}
 
 function FreqCharts() {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<SeriesData[]>([]);
 
-    const monthsOrder = [
+    const monthsOrder: string[] = [
         "January", "February", "March", 
         "April", "May", "June", 
         "July", "August", "September", 
@@ -16,11 +28,11 @@ function FreqCharts() {
             // fetch('http://localhost:4001/submissions_frequency')
             .then(res => res.json())
             // .then(res => console.log(res))
-            .then(res => res.submissions_frequency)
+            .then((res: { submissions_frequency: SubmissionFrequency }) => res.submissions_frequency)
             .then(data => {
-                const seriesData = Object.entries(data).map(([year, monthsData]) => ({
+                const seriesData: SeriesData[] = Object.entries(data).map(([year, monthsData]) => ({
                     name: year,
-                    data: monthsOrder.map(month => monthsData[month])
+                    data: monthsOrder.map(month => monthsData[month] ?? 0)
                 }));
                 setData(seriesData);
             })
@@ -32,8 +44,8 @@ function FreqCharts() {
     }, []);
 
 
-    const chartOptions = {
-        options: {
+    const chartOptions: ApexOptions = {
+        // options: {
             chart: {
                 height: 350,
                 type: 'line',
@@ -78,7 +90,7 @@ function FreqCharts() {
                     'July', 'August', 'September', 'October', 'November', 'December'
                 ],
             },
-        },
+        // },
     };
 
     return (
@@ -87,10 +99,10 @@ function FreqCharts() {
                 <h5 className='card-title'>
                     Frequency of Post Submission by Month
                     <Chart
-                        options={chartOptions.options}
+                        options={chartOptions}
                         series={data}
-                        type={chartOptions.options.chart.type}
-                        height={chartOptions.options.chart.height}
+                        type={chartOptions.chart?.type || 'line'}
+                        height={chartOptions.chart?.height || 350}
                     />
                 </h5>
             </div>

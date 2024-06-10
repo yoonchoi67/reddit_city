@@ -3,8 +3,7 @@ import '../css/SideBar.css';
 import navList from '../static_data/navItem';
 import NavItem from './NavItem';
 
-
-function SideBar() {
+function SideBar(): React.ReactElement {
     
     return (
         <aside id='sidebar' className='sidebar'>

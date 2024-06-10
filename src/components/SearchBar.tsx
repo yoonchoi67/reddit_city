@@ -1,13 +1,13 @@
 import React from 'react';
 import '../css/searchBar.css';
 
-function SearchBar() {
+function SearchBar(): React.ReactElement {
   return (
     <div className='search-bar'>
         <form
             className='search-form d-flex align-items-center'
             method='POST'
-            actions='#'
+            action='#'
         >
             <input
                 type='text'

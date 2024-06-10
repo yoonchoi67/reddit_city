@@ -3,7 +3,7 @@ import '../css/main.css';
 import PageTitle from './PageTitle';
 import Dashboard from './Dashboard';
 
-function Main() {
+function Main(): React.ReactElement {
   return (
     <main id='main' className='main'>
         <PageTitle page='dashboard'/>
