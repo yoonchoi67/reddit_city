@@ -14,7 +14,7 @@ const myIcon = L.icon({
 
 
 function LeafletMap() {
-  const mapRef = useRef(null);
+  const mapRef = useRef<L.Map | null>(null);//useRef(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function LeafletMap() {
       .then(response => response.json())
       .then(data => {
         const markers = L.markerClusterGroup();
-        data.properties.forEach((rec) => {
+        data.properties.forEach((rec: any) => {
           const marker = L.marker([rec.lat_y, rec.long_x], {icon: myIcon});
           // const marker = L.marker(new L.LatLng(rec.lat_y, rec.long_x));
           marker.bindPopup(`
@@ -43,8 +43,10 @@ function LeafletMap() {
           `);
           markers.addLayer(marker);
         });
-        mapRef.current.addLayer(markers);
-        setLoading(false);
+        if (mapRef.current !== null) {
+          mapRef.current.addLayer(markers);
+          setLoading(false);
+        }
       })
       .catch(error => {
         console.error('Error fetching marker data:', error);
@@ -53,7 +55,9 @@ function LeafletMap() {
 
     // Clean up the map on component unmount
     return () => {
+      if (mapRef.current !== null) {
       mapRef.current.remove();
+      }
     };
   }, []);
 

@@ -3,9 +3,9 @@ import '../css/logo.css';
 
 function Logo(): React.ReactElement {
   
-    const handleToggleSideBar = () => {
-        document.body.classList.toggle('toggle-sidebar');
-    }
+    // const handleToggleSideBar = () => {
+    //     document.body.classList.toggle('toggle-sidebar');
+    // }
     
     return (
     <div className='d-flex align-items-center justify-content-between'>
@@ -14,7 +14,7 @@ function Logo(): React.ReactElement {
         </a>
         <i 
             className='bi bi-list toggle-sidebar-btn' 
-            onClick={handleToggleSideBar}
+            // onClick={handleToggleSideBar}
         ></i>
     </div>
   );
